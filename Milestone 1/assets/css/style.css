@@ -8,6 +8,7 @@ body{
   width: 100%;
   height: 100%;
   background: #DBDBD4;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container{
@@ -42,8 +43,9 @@ body{
   width: 60px;
   border-radius: 50%;
 }
-.utente p{
+.utente h3{
   font-size: 18px;
+  font-weight: 400;
   margin-left: 10px;
   line-height: 60px;
 }
@@ -136,14 +138,55 @@ a{
   flex-direction: column;
   justify-content: space-between;
 }
+
+/* .header_right */
+.contact_chat{
+  display: flex;
+  line-height: 1.8;
+}
+.contact_chat img{
+  width: 60px;
+  border-radius: 50%;
+}
+.contact_chat h3{
+  font-weight: 400;
+  font-size: 18px;
+  margin-left: 20px;
+}
+.contact_chat p{
+  color: #737376;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+/* .main_right */
 .main_right{
   width: 100%;
   height: calc(100% - 84px - 84px);
   background-image: url("../img/mine.jpg");
   overflow-y: scroll;
 }
+
 .footer_right{
   width: 100%;
   height: 84px;
+  padding: 15px;
   background: #F3EEEA;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.footer_right i{
+  font-size: 2em;
+  margin: 0 12px;
+  color: #B1B1B1;
+}
+.footer_right input{
+  width: 86%;
+  height: 100%;
+  padding: 10px;
+  color: #B6B9BB;
+  outline-color: #B6B9BB;
+  border: 1px solid #F5F5F5;
+  border-radius: 6px;
 }
