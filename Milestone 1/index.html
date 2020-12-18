@@ -49,40 +49,10 @@
 
         <!-- .contacts -->
         <div class="contacts">
-          <div class="contact">
-            <img src="assets/img/avatar_1.jpg" alt="">
-            <p>Michele</p>
+          <div class="contact" v-for="(contact, index) in contacts">
+            <img :src="`assets/img/avatar_1.jpg`" alt="">
+            <p>{{contacts[index].name}}</p>
           </div>
-          <div class="contact">
-            <img src="assets/img/avatar_2.jpg" alt="">
-            <p>Fabio</p>
-          </div>
-          <div class="contact">
-            <img src="assets/img/avatar_3.jpg" alt="">
-            <p>Samuele</p>
-          </div>
-          <div class="contact">
-            <img src="assets/img/avatar_4.jpg" alt="">
-            <p>Franco</p>
-          </div>
-          <div class="contact">
-            <img src="assets/img/avatar_5.jpg" alt="">
-            <p>Antonio</p>
-          </div>
-          <div class="contact">
-            <img src="assets/img/avatar_6.jpg" alt="">
-            <p>Luisa</p>
-          </div>
-          <div class="contact">
-            <img src="assets/img/avatar_7.jpg" alt="">
-            <p>Marco</p>
-          </div>
-          <div class="contact">
-            <img src="assets/img/avatar_8.jpg" alt="">
-            <p>Andrea</p>
-          </div>
-
-
         </div><!-- /.contacts -->
       </div>
       <!-- /.left -->
@@ -118,7 +88,6 @@
       <!-- /.right -->
     </div>
     <!-- /#app .container -->
-
 
     <!-- Vue -->
     <!-- development version, includes helpful console warnings -->
