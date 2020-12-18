@@ -50,7 +50,7 @@
         <!-- .contacts -->
         <div class="contacts">
           <div class="contact" v-for="(contact, index) in contacts">
-            <img :src="`assets/img/avatar_1.jpg`" alt="">
+            <img :src="`assets/img/avatar${contacts[index].avatar}.jpg`" alt="">
             <p>{{contacts[index].name}}</p>
           </div>
         </div><!-- /.contacts -->
@@ -64,7 +64,7 @@
             <img src="assets/img/avatar_1.jpg" alt="">
             <div class="text">
               <h3>Michele</h3>
-              <p>Ultimo accesso alle</p>
+              <p>{{message}}</p>
             </div>
           </div>
           <div class="icons">
