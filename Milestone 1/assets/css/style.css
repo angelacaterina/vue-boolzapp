@@ -21,28 +21,111 @@ body{
 .left{
   width: 397px;
   height: 100%;
+  border-right: 1px solid #D6D6D6;
 }
-
+/* .header_left */
 .header_left,
 .header_right{
   width: 100%;
   height: 84px;
+  /* text-align: center; */
   background: #EAEAEA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
+.utente{
+  display: flex;
+}
+.utente img{
+  width: 60px;
+  border-radius: 50%;
+}
+.utente p{
+  font-size: 18px;
+  margin-left: 10px;
+  line-height: 60px;
+}
+
+.icons{
+  display: flex;
+}
+.icons i{
+  font-size: 1.6em;
+  margin: 0 12px;
+  color: #B1B1B1;
+}
+
+/* .left_notifications */
 .left_notifications{
-  width: 100%;
-  height: 96px;
   background: #8EDAFC;
+  display: flex;
+  padding: 22px 24px;
 }
+.left_notifications i{
+  font-size: 2em;
+  border-radius: 50%;
+  padding: 10px;
+  color: #8EDAFC;
+  background: #F2FBFF;
+}
+.left_notifications div{
+  padding-left: 10px;
+  margin-top: 7px;
+}
+a{
+  color: #4F7485;
+}
+
+/* .left_searchBar */
 .left_searchBar{
-  width: 100%;
+  /* width: 100%; */
   height: 59px;
   background: #FAFAFA;
+  padding: 9px;
 }
+.left_searchBar i{
+  color: #B6B9BB;
+  background: #FFFFFF;
+  padding: 7px 15px;
+  border: 1px solid #F5F5F5;
+  border-radius: 6px;
+  vertical-align: middle;
+}
+.left_searchBar input{
+  width: 86%;
+  height: 100%;
+  padding: 7px;
+  color: #B6B9BB;
+  outline-color: #B6B9BB;
+  border: 1px solid #F5F5F5;
+  border-radius: 6px;
+}
+
+
+/* .contacts */
 .contacts{
   width: 100%;
   height: calc(100% - 84px - 96px - 59px);
   background: #FFFFFF;
+  overflow-y: scroll;
+}
+.contact{
+  padding: 19.5px 22px;
+  border-bottom: 1px solid #F5F5F5;
+  display: flex;
+}
+.contact:hover{
+  background: #F6F6F6;
+}
+.contact img{
+  width: 60px;
+  border-radius: 50%;
+}
+.contact p{
+  font-size: 18px;
+  margin-left: 20px;
 }
 
 /* RIGHT */
