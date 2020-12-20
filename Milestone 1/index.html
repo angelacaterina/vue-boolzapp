@@ -17,10 +17,10 @@
   </head>
   <body>
     <div id="app" class="container">
-      <div class="left">
+      <aside class="app_left">
         <!-- .header_left -->
         <div class="header_left">
-          <div class="utente">
+          <div class="user">
             <img src="assets/img/avatar_io.jpg" alt="">
             <h3>Nome Utente</h3>
           </div>
@@ -38,7 +38,6 @@
             <p>Ricevi notifiche di nuovi messaggi</p>
             <a href="#">Attiva notifiche descktop</a>
           </div>
-
         </div><!-- /.left_notifications -->
 
         <!-- .left_searchBar -->
@@ -49,15 +48,16 @@
 
         <!-- .contacts -->
         <div class="contacts">
+          <!-- // Visualizzazione dinamica della lista contatti: tramite la direttiva v-for -->
           <div class="contact" v-for="(contact, index) in contacts">
-            <img :src="`assets/img/avatar${contacts[index].avatar}.jpg`" alt="">
-            <p>{{contacts[index].name}}</p>
+            <img :src="`assets/img/avatar${contacts[index].avatar}.jpg`" alt=""><!-- //Vue: immagine contatto -->
+            <p>{{contacts[index].name}}</p><!-- //Vue: nome contatto -->
           </div>
         </div><!-- /.contacts -->
-      </div>
+      </aside>
       <!-- /.left -->
 
-      <div class="right">
+      <main class="app_right">
         <!-- .header_right -->
         <div class="header_right">
           <div class="contact_chat">
@@ -74,9 +74,13 @@
           </div>
         </div><!-- /.header_right -->
 
-        <!-- .main_right -->
-        <div class="main_right">
-        </div><!-- /.main_right -->
+        <!-- .main_chat -->
+        <div class="main_chat ">
+          <!-- <div class=" chat chat_user">
+          </div>
+          <div class="chat chat_contact">
+          </div> -->
+        </div><!-- /.main_chat -->
 
         <!-- .footer_right -->
         <div class="footer_right">
@@ -84,7 +88,7 @@
           <input type="text" name="" value="" placeholder="Scrivi un messaggio">
           <i class="fas fa-microphone"></i>
         </div><!-- /.footer_right -->
-      </div>
+      </main>
       <!-- /.right -->
     </div>
     <!-- /#app .container -->
