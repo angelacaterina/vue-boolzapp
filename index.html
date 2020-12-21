@@ -49,21 +49,21 @@
         <!-- .contacts -->
         <div class="contacts">
           <!-- // Visualizzazione dinamica della lista contatti: tramite la direttiva v-for -->
-          <div class="contact" v-for="(contact, index) in contacts">
-            <img :src="`assets/img/avatar${contacts[index].avatar}.jpg`" alt=""><!-- //Vue: immagine contatto -->
+          <div class="contact" v-for="(contact, index) in contacts" @click="contactIndex(index)">
+            <img :src="contacts[index].avatar" alt=""><!-- //Vue: immagine contatto -->
             <p>{{contacts[index].name}}</p><!-- //Vue: nome contatto -->
-          </div>
+          </div><!-- /.contact -->
         </div><!-- /.contacts -->
       </aside>
-      <!-- /.left -->
+      <!-- /.app_left -->
 
       <main class="app_right">
         <!-- .header_right -->
         <div class="header_right">
           <div class="contact_chat">
-            <img src="assets/img/avatar_1.jpg" alt="">
+            <img :src="contacts[counter].avatar" alt="">
             <div class="text">
-              <h3>Michele</h3>
+              <h3>{{contacts[counter].name}}</h3>
               <p>{{message}}</p>
             </div>
           </div>
@@ -75,11 +75,13 @@
         </div><!-- /.header_right -->
 
         <!-- .main_chat -->
-        <div class="main_chat ">
-          <!-- <div class=" chat chat_user">
+        <div class="main_chat">
+          <!-- // Visualizzazione dinamica dei messaggi: tramite la direttiva v-for -->
+          <div v-for="message in contacts[counter].messages"  class="message_row">
+            <div class="message_chat" :class="message.status">
+              {{message.text}}
+            </div>
           </div>
-          <div class="chat chat_contact">
-          </div> -->
         </div><!-- /.main_chat -->
 
         <!-- .footer_right -->
@@ -89,7 +91,7 @@
           <i class="fas fa-microphone"></i>
         </div><!-- /.footer_right -->
       </main>
-      <!-- /.right -->
+      <!-- /.app_right -->
     </div>
     <!-- /#app .container -->
 
@@ -97,6 +99,11 @@
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!-- Js -->
-    <script src="assets/js/main.js" charset="utf-8"></script>
+    <!-- <script src="assets/js/Milestone 1/main.js" charset="utf-8"></script> -->
+    <script src="assets/js/Milestone 2/main.js" charset="utf-8"></script>
+    <!-- <script src="assets/js/Milestone 3/main.js" charset="utf-8"></script> -->
+    <!-- <script src="assets/js/Milestone 4/main.js" charset="utf-8"></script> -->
+    <!-- <script src="assets/js/Milestone 5 - opzionale/main.js" charset="utf-8"></script> -->
+
   </body>
 </html>
