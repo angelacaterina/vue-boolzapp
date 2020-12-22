@@ -1,8 +1,6 @@
 // Milestone 3
-// Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando
-// “enter” il testo viene aggiunto al thread sopra, come messaggio verde
-// Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà
-// un “ok” come risposta, che apparirà dopo 1 secondo.
+//1. Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+//2. Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 let app = new Vue({
   el:'#app',
   data:{
@@ -179,12 +177,16 @@ let app = new Vue({
       }
     ]
   },
-  // Click sul contatto mostra la conversazione del contatto cliccato
+  // risposta che apparirà dopo 1 secondo
+  created: function(){
+    setTimeout(this.receivedMessage, 1000);
+  },
   methods: {
     contactIndex(index){
       console.log(index);
       this.counter = index;
     },
+    //1. Aggiunta di un messaggio
     addMessage(){
       let newText = this.newMessage;
       if (newText.length >= 0){
@@ -196,6 +198,16 @@ let app = new Vue({
         this.newMessage = '';
         console.log(newText);
       }
+    },
+    //2. Risposta dall’interlocutore
+    receivedMessage(){
+      let receivedText = "ok";
+      this.contacts[this.counter].messages.push({
+        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+        text: receivedText,
+        status: 'received',
+      });
+      console.log(receivedText);
     }
   }
 })

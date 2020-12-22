@@ -27,12 +27,12 @@
           <div class="user">
             <img src="assets/img/avatar_io.jpg" alt="">
             <h3>Nome Utente</h3>
-          </div>
+          </div><!-- /.user -->
           <div class="icons">
             <i class="fas fa-circle-notch"></i>
             <i class="fas fa-comment-alt"></i>
             <i class="fas fa-ellipsis-v"></i>
-          </div>
+          </div><!-- /.icons -->
         </div><!-- /.header_left -->
 
         <!-- .left_notifications -->
@@ -52,7 +52,7 @@
 
         <!-- .contacts -->
         <div class="contacts">
-          <!-- // Visualizzazione dinamica della lista contatti: tramite la direttiva v-for -->
+          <!-- // M1.1 Visualizzazione dinamica della lista contatti: tramite la direttiva v-for -->
           <div class="contact" v-for="(contact, index) in contacts" @click="contactIndex(index)">
             <img :src="contacts[index].avatar" alt=""><!-- //Vue: immagine contatto -->
             <p>{{contacts[index].name}}</p><!-- //Vue: nome contatto -->
@@ -65,33 +65,34 @@
         <!-- .header_right -->
         <div class="header_right">
           <div class="contact_chat">
-            <img :src="contacts[counter].avatar" alt="">
+            <img :src="contacts[counter].avatar" alt=""><!-- //Vue: immagine contatto selezionato -->
             <div class="text">
-              <h3>{{contacts[counter].name}}</h3>
-              <p>{{message}}</p>
-            </div>
-          </div>
+              <h3>{{contacts[counter].name}}</h3><!-- //Vue: nome contatto selezionato -->
+              <p>{{message}}</p><!-- //Vue: messaggio di ultimo accesso del contatto -->
+            </div><!-- /.text -->
+          </div><!-- /.contact_chat -->
           <div class="icons">
             <i class="fas fa-search"></i>
             <i class="fas fa-paperclip"></i>
             <i class="fas fa-ellipsis-v"></i>
-          </div>
+          </div><!-- /.icons -->
         </div><!-- /.header_right -->
 
         <!-- .main_chat -->
         <div class="main_chat">
-          <!-- // Visualizzazione dinamica dei messaggi: tramite la direttiva v-for -->
+          <!-- // M2.1 Visualizzazione dinamica dei messaggi: tramite la direttiva v-for -->
           <div v-for="message in contacts[counter].messages"  class="message_row">
             <div class="message_chat" :class="message.status">
-              <p>{{message.text}}</p>
-              <span>{{message.date}}</span>
-            </div>
-          </div>
+              <p>{{message.text}}</p><!-- //Vue: messaggio -->
+              <span>{{message.date}}</span><!-- //Vue: orario di invio del messaggio -->
+            </div><!-- /.message_chat -->
+          </div><!-- /.message_row -->
         </div><!-- /.main_chat -->
 
         <!-- .footer_right -->
         <div class="footer_right">
           <i class="far fa-smile"></i>
+          <!-- // M3.1 Aggiunta di un messaggio -->
           <input type="text" name="" value="" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addMessage">
           <i class="fas fa-microphone"></i>
         </div><!-- /.footer_right -->
