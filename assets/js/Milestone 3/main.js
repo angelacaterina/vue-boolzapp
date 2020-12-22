@@ -177,10 +177,6 @@ let app = new Vue({
       }
     ]
   },
-  // risposta che apparirà dopo 1 secondo
-  created: function(){
-    setTimeout(this.receivedMessage, 1000);
-  },
   methods: {
     contactIndex(index){
       console.log(index);
@@ -196,8 +192,10 @@ let app = new Vue({
           status: 'sent',
         });
         this.newMessage = '';
-        console.log(newText);
-      }
+        // console.log(newText);
+      };
+      // risposta che apparirà dopo 1 secondo
+      setTimeout(this.receivedMessage, 1000);
     },
     //2. Risposta dall’interlocutore
     receivedMessage(){
@@ -207,7 +205,7 @@ let app = new Vue({
         text: receivedText,
         status: 'received',
       });
-      console.log(receivedText);
+      // console.log(receivedText);
     }
   }
 })
