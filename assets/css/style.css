@@ -8,30 +8,26 @@
 body{
   font-family: 'Roboto', sans-serif;
   background: #DBDBD4;
+  position: relative;
+}
+.bg_green {
+  width: 100%;
+  height: 114px;
+  top: 0;
+  background-color: #009688;
+  position: absolute;
+  z-index: -1;
 }
 
 .container{
   width: 1140px;
-  height: 640px;
-  margin: 30px auto;
+  height: 670px;
+  margin:auto;
+  margin-bottom: 30px;
+  padding-top: 30px;
   display: flex;
 }
 
-/* background */
-/* .background{
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 0;
-}
-.bg_grey{
-
-  background: #DBDBD4;
-}
-.bg_green{
-  height: 100px;
-  background: #009688;
-} */
 /* LEFT */
 aside.app_left{
   width: 397px;
