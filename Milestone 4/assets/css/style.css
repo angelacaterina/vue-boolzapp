@@ -1,4 +1,3 @@
-/* // Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse */
 *{
   margin: 0;
   padding: 0;
@@ -16,36 +15,38 @@ body{
   background-color: #DBDBD4;
 }
 
+/**** APP ****/
 .container{
   width: 1140px;
   height: 640px;
   margin:30px auto;
   display: flex;
 }
-
-/* LEFT */
+/*** APP LEFT ***/
 aside.app_left{
   width: 397px;
   height: 100%;
   border-right: 1px solid #D6D6D6;
 }
-/* .header_left */
+
+/** .header_left **/
 .header_left,
 .header_right{
   width: 100%;
   height: 84px;
-  /* text-align: center; */
   background: #EAEAEA;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
+/* .user */
 .user{
   display: flex;
 }
 .user img{
   width: 60px;
+  height: 60px;
   border-radius: 50%;
 }
 .user h3{
@@ -54,7 +55,7 @@ aside.app_left{
   margin-left: 10px;
   line-height: 60px;
 }
-
+/* .icons */
 .icons{
   display: flex;
 }
@@ -64,7 +65,7 @@ aside.app_left{
   color: #B1B1B1;
 }
 
-/* .left_notifications */
+/** .left_notifications **/
 .left_notifications{
   background: #8EDAFC;
   display: flex;
@@ -85,7 +86,7 @@ a{
   color: #4F7485;
 }
 
-/* .left_searchBar */
+/** .left_searchBar **/
 .left_searchBar{
   /* width: 100%; */
   height: 59px;
@@ -110,14 +111,14 @@ a{
   border-radius: 6px;
 }
 
-
-/* .contacts */
+/** .contacts **/
 .contacts{
   width: 100%;
   height: calc(100% - 84px - 96px - 59px);
   background: #FFFFFF;
   overflow-y: scroll;
 }
+/* .contact */
 .contact{
   padding: 19.5px 22px;
   border-bottom: 1px solid #F5F5F5;
@@ -128,6 +129,7 @@ a{
 }
 .contact img{
   width: 60px;
+  height: 60px;
   border-radius: 50%;
 }
 .contact p{
@@ -135,7 +137,7 @@ a{
   margin-left: 20px;
 }
 
-/* RIGHT */
+/*** APP RIGHT ***/
 main.app_right{
   width: calc(100% - 397px);
   height: 100%;
@@ -144,13 +146,15 @@ main.app_right{
   justify-content: space-between;
 }
 
-/* .header_right */
+/** .header_right **/
+/* .contact_chat */
 .contact_chat{
   display: flex;
   line-height: 1.8;
 }
 .contact_chat img{
   width: 60px;
+  height: 60px;
   border-radius: 50%;
 }
 .contact_chat h3{
@@ -164,7 +168,7 @@ main.app_right{
   margin-left: 20px;
 }
 
-/* .main_right */
+/** .main_right **/
 .main_chat{
   width: 100%;
   height: calc(100% - 84px - 84px);
@@ -172,12 +176,13 @@ main.app_right{
   overflow-y: scroll;
   padding: 43px 50px 0 70px;
 }
-
+/* .message_row  */
 .message_row::after{
   content: "";
   display: table;
   clear: both;
 }
+/* .message_chat */
 .message_chat{
   display: flex;
   align-items: center;
@@ -200,6 +205,7 @@ main.app_right{
   font-size: 12px;
   margin: 6px;
 }
+/*message.status*/
 .sent{
   float: right;
   background-color: #D5F9BA;
@@ -209,8 +215,7 @@ main.app_right{
   background-color: #FFFFFF;
 }
 
-
-/* .footer_right */
+/** .footer_right **/
 .footer_right{
   width: 100%;
   height: 84px;

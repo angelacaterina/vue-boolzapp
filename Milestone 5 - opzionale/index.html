@@ -53,7 +53,7 @@
           <!-- // M2.2 Click sul contatto mostra la conversazione del contatto cliccato -->
           <!-- // M4 Ricerca utenti -->
           <div class="contact" v-for="(contact, index) in filteredSearch" @click="contactIndex(index)">
-            <img :src="contacts[index].avatar" alt=""><!-- //Vue: immagine contatto -->
+            <img :src="contact.avatar" alt=""><!-- //Vue: immagine contatto -->
             <p>{{contact.name}}</p><!-- //Vue: nome contatto -->
             <span>{{contact.date}}</span>
             <p>{{contact.text}}</p>
@@ -67,7 +67,7 @@
         <div class="header_right">
           <div class="contact_chat">
             <img :src="contacts[counter].avatar" alt=""><!-- //Vue: immagine contatto selezionato -->
-            <div class="text">
+            <div>
               <h3>{{contacts[counter].name}}</h3><!-- //Vue: nome contatto selezionato -->
               <p>{{message}}</p><!-- //Vue: messaggio di ultimo accesso del contatto -->
             </div><!-- /.text -->
