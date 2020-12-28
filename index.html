@@ -52,7 +52,7 @@
           <!-- // M1.1 Visualizzazione dinamica della lista contatti: tramite la direttiva v-for -->
           <!-- // M4 Ricerca utenti -->
           <div class="contact" v-for="(contact, index) in filteredSearch" @click="contactIndex(index)">
-            <img :src="contacts[index].avatar" alt=""><!-- //Vue: immagine contatto -->
+            <img :src="contact.avatar" alt=""><!-- //Vue: immagine contatto -->
             <p>{{contact.name}}</p><!-- //Vue: nome contatto -->
           </div><!-- /.contact -->
         </div><!-- /.contacts -->
