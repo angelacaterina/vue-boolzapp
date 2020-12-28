@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>App Whatsapp - Milestone 1 </title>
+    <title>App Whatsapp - Milestone 5</title>
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -50,10 +50,13 @@
         <!-- .contacts -->
         <div class="contacts">
           <!-- // M1.1 Visualizzazione dinamica della lista contatti: tramite la direttiva v-for -->
+          <!-- // M2.2 Click sul contatto mostra la conversazione del contatto cliccato -->
           <!-- // M4 Ricerca utenti -->
           <div class="contact" v-for="(contact, index) in filteredSearch" @click="contactIndex(index)">
-            <img :src="contact.avatar" alt=""><!-- //Vue: immagine contatto -->
+            <img :src="contacts[index].avatar" alt=""><!-- //Vue: immagine contatto -->
             <p>{{contact.name}}</p><!-- //Vue: nome contatto -->
+            <span>{{contact.date}}</span>
+            <p>{{contact.text}}</p>
           </div><!-- /.contact -->
         </div><!-- /.contacts -->
       </aside>
@@ -105,11 +108,6 @@
     <!-- CDN day.js -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <!-- Js -->
-    <!-- <script src="assets/js/Milestone 1/main.js" charset="utf-8"></script> -->
-    <!-- <script src="assets/js/Milestone 2/main.js" charset="utf-8"></script> -->
-    <!-- <script src="assets/js/Milestone 3/main.js" charset="utf-8"></script> -->
-    <script src="assets/js/Milestone 4/main.js" charset="utf-8"></script>
-    <!-- <script src="assets/js/Milestone 5 - opzionale/main.js" charset="utf-8"></script> -->
-
+    <script src="assets/js/main.js" charset="utf-8"></script>
   </body>
 </html>
