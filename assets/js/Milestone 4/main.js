@@ -196,10 +196,11 @@ let app = new Vue({
       setTimeout(this.receivedMessage, 1000);
     },
     receivedMessage(){
-      let receivedText = "ok";
+      let receivedText = ["ok", "va bene", "perfetto!", "non ci sono problemi"];
+      let textRnd = receivedText[Math.floor(Math.random() * receivedText.length)];
       this.contacts[this.counter].messages.push({
         date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-        text: receivedText,
+        text: textRnd,
         status: 'received',
       });
       // console.log(receivedText);
