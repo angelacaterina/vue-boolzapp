@@ -1,0 +1,235 @@
+/* // Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  width: 100vw;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0,150,136,1) 16.3%, rgba(219,219,212,1) 16.3%, rgba(219,219,212,1) 100%);
+  background-repeat:no-repeat;
+}
+.bg_grey{
+  background-color: #DBDBD4;
+}
+
+.container{
+  width: 1140px;
+  height: 640px;
+  margin:30px auto;
+  display: flex;
+}
+
+/* LEFT */
+aside.app_left{
+  width: 397px;
+  height: 100%;
+  border-right: 1px solid #D6D6D6;
+}
+/* .header_left */
+.header_left,
+.header_right{
+  width: 100%;
+  height: 84px;
+  /* text-align: center; */
+  background: #EAEAEA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.user{
+  display: flex;
+}
+.user img{
+  width: 60px;
+  border-radius: 50%;
+}
+.user h3{
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 10px;
+  line-height: 60px;
+}
+
+.icons{
+  display: flex;
+}
+.icons i{
+  font-size: 1.6em;
+  margin: 0 12px;
+  color: #B1B1B1;
+}
+
+/* .left_notifications */
+.left_notifications{
+  background: #8EDAFC;
+  display: flex;
+  padding: 22px 24px;
+}
+.left_notifications i{
+  font-size: 2em;
+  border-radius: 50%;
+  padding: 10px;
+  color: #8EDAFC;
+  background: #F2FBFF;
+}
+.left_notifications div{
+  padding-left: 10px;
+  margin-top: 7px;
+}
+a{
+  color: #4F7485;
+}
+
+/* .left_searchBar */
+.left_searchBar{
+  /* width: 100%; */
+  height: 59px;
+  background: #FAFAFA;
+  padding: 9px;
+}
+.left_searchBar i{
+  color: #B6B9BB;
+  background: #FFFFFF;
+  padding: 7px 15px;
+  border: 1px solid #F5F5F5;
+  border-radius: 6px;
+  vertical-align: middle;
+}
+.left_searchBar input{
+  width: 86%;
+  height: 100%;
+  padding: 7px;
+  color: #B6B9BB;
+  outline-color: #B6B9BB;
+  border: 1px solid #F5F5F5;
+  border-radius: 6px;
+}
+
+
+/* .contacts */
+.contacts{
+  width: 100%;
+  height: calc(100% - 84px - 96px - 59px);
+  background: #FFFFFF;
+  overflow-y: scroll;
+}
+.contact{
+  padding: 19.5px 22px;
+  border-bottom: 1px solid #F5F5F5;
+  display: flex;
+}
+.contact:hover{
+  background: #F6F6F6;
+}
+.contact img{
+  width: 60px;
+  border-radius: 50%;
+}
+.contact p{
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+/* RIGHT */
+main.app_right{
+  width: calc(100% - 397px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* .header_right */
+.contact_chat{
+  display: flex;
+  line-height: 1.8;
+}
+.contact_chat img{
+  width: 60px;
+  border-radius: 50%;
+}
+.contact_chat h3{
+  font-weight: 400;
+  font-size: 18px;
+  margin-left: 20px;
+}
+.contact_chat p{
+  color: #737376;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+/* .main_right */
+.main_chat{
+  width: 100%;
+  height: calc(100% - 84px - 84px);
+  background-image: url("../img/mine.jpg");
+  overflow-y: scroll;
+  padding: 43px 50px 0 70px;
+}
+
+.message_row::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+.message_chat{
+  display: flex;
+  align-items: center;
+  min-width: 232px;
+  max-width: 460px;
+  height: 60px;
+  padding: 14px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.message_chat > p{
+  margin-bottom: 7px;
+}
+.message_chat > span{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #BDB9BB;
+  font-size: 12px;
+  margin: 6px;
+}
+.sent{
+  float: right;
+  background-color: #D5F9BA;
+}
+.received{
+  float: left;
+  background-color: #FFFFFF;
+}
+
+
+/* .footer_right */
+.footer_right{
+  width: 100%;
+  height: 84px;
+  padding: 15px;
+  background: #F3EEEA;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.footer_right i{
+  font-size: 2em;
+  margin: 0 12px;
+  color: #B1B1B1;
+}
+.footer_right input{
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  outline-color: #B6B9BB;
+  border: 1px solid #F5F5F5;
+  border-radius: 6px;
+}

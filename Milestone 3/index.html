@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>App Whatsapp - Milestone 3 </title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <!-- Css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body class="bg_grey">
+    <div id="app" class="container">
+      <aside class="app_left">
+        <!-- .header_left -->
+        <div class="header_left">
+          <div class="user">
+            <img src="assets/img/avatar_io.jpg" alt="">
+            <h3>Nome Utente</h3>
+          </div><!-- /.user -->
+          <div class="icons">
+            <i class="fas fa-circle-notch"></i>
+            <i class="fas fa-comment-alt"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div><!-- /.icons -->
+        </div><!-- /.header_left -->
+
+        <!-- .left_notifications -->
+        <div class="left_notifications">
+          <i class="fas fa-bell-slash"></i>
+          <div>
+            <p>Ricevi notifiche di nuovi messaggi</p>
+            <a href="#">Attiva notifiche descktop</a>
+          </div>
+        </div><!-- /.left_notifications -->
+
+        <!-- .left_searchBar -->
+        <div class="left_searchBar">
+          <i class="fas fa-search"></i>
+          <input type="text" name="search" value="" placeholder="Cerca o inizia una nuova chat">
+        </div><!-- /.left_searchBar -->
+
+        <!-- .contacts -->
+        <div class="contacts">
+          <!-- // M1.1 Visualizzazione dinamica della lista contatti: tramite la direttiva v-for -->
+          <!-- // M2.2 Click sul contatto mostra la conversazione del contatto cliccato -->
+          <div class="contact" v-for="(contact, index) in contacts" @click="contactIndex(index)">
+            <img :src="contacts[index].avatar" alt=""><!-- //Vue: immagine contatto -->
+            <p>{{contacts[index].name}}</p><!-- //Vue: nome contatto -->
+          </div><!-- /.contact -->
+        </div><!-- /.contacts -->
+      </aside>
+      <!-- /.app_left -->
+
+      <main class="app_right">
+        <!-- .header_right -->
+        <div class="header_right">
+          <div class="contact_chat">
+            <img :src="contacts[counter].avatar" alt=""><!-- //Vue: immagine contatto selezionato -->
+            <div class="text">
+              <h3>{{contacts[counter].name}}</h3><!-- //Vue: nome contatto selezionato -->
+              <p>{{message}}</p><!-- //Vue: messaggio di ultimo accesso del contatto -->
+            </div><!-- /.text -->
+          </div><!-- /.contact_chat -->
+          <div class="icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-paperclip"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div><!-- /.icons -->
+        </div><!-- /.header_right -->
+
+        <!-- .main_chat -->
+        <div class="main_chat">
+          <!-- // M2.1 Visualizzazione dinamica dei messaggi: tramite la direttiva v-for -->
+          <div v-for="message in contacts[counter].messages"  class="message_row">
+            <div class="message_chat" :class="message.status">
+              <p>{{message.text}}</p><!-- //Vue: messaggio -->
+              <span>{{message.date}}</span><!-- //Vue: orario di invio del messaggio -->
+            </div><!-- /.message_chat -->
+          </div><!-- /.message_row -->
+        </div><!-- /.main_chat -->
+
+        <!-- .footer_right -->
+        <div class="footer_right">
+          <i class="far fa-smile"></i>
+          <!-- // M3 Aggiunta di un messaggio, Risposta dall’interlocutore-->
+          <input type="text" name="" value="" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addMessage">
+          <i class="fas fa-microphone"></i>
+        </div><!-- /.footer_right -->
+      </main>
+      <!-- /.app_right -->
+    </div>
+    <!-- /#app .container -->
+
+    <!-- Vue -->
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- CDN day.js -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <!-- Js -->
+    <script src="assets/js/main.js" charset="utf-8"></script>
+  </body>
+</html>
