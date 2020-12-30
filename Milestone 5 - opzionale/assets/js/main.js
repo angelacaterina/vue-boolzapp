@@ -205,7 +205,8 @@ let app = new Vue({
         status: 'received',
       });
       // console.log(receivedText);
-    }
+    },
+    // 1. Cancella messaggio: ​cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
   },
   computed: {
     filteredSearch(){

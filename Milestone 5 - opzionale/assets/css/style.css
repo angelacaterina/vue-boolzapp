@@ -14,7 +14,22 @@ body{
 .bg_grey{
   background-color: #DBDBD4;
 }
-
+/* UTILITY dropdown */
+.d_none{
+  display: none;
+}
+.active{
+  display: block;
+}
+.position_rel{
+  position: relative;
+}
+.position_ab{
+  position: absolute;
+}
+.list_style_none{
+  list-style: none;
+}
 /**** APP ****/
 .container{
   width: 1140px;
@@ -185,8 +200,9 @@ main.app_right{
 /* .message_chat */
 .message_chat{
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  min-width: 232px;
+  min-width: 240px;
   max-width: 460px;
   height: 60px;
   padding: 14px;
@@ -194,10 +210,32 @@ main.app_right{
   margin-bottom: 10px;
   position: relative;
 }
-.message_chat > p{
+.message_chat p{
   margin-bottom: 7px;
+  font-size: 16px;
 }
-.message_chat > span{
+
+.icon_dropdown{
+  color: #BDB9BB;
+  font-size: 1.4em;
+  margin-left: 10px;
+  margin-right: 4px;
+}
+.dropdown_menu{
+  width: max-content;
+  background: white;
+  padding: 10px;
+  box-shadow: 2px 2px 7px black;
+  line-height: 2;
+  z-index: 2;
+  right: 0;
+}
+.message_chat:hover .dropdown,
+.dropdown:hover .dropdown_menu{
+  display: block;
+}
+
+.message_chat span.date{
   position: absolute;
   bottom: 0;
   right: 0;
@@ -205,6 +243,7 @@ main.app_right{
   font-size: 12px;
   margin: 6px;
 }
+
 /*message.status*/
 .sent{
   float: right;

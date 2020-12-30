@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <!-- Boostrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
     <!-- Css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- JQuery -->
@@ -84,8 +86,20 @@
           <!-- // M2.1 Visualizzazione dinamica dei messaggi: tramite la direttiva v-for -->
           <div v-for="message in contacts[counter].messages"  class="message_row">
             <div class="message_chat" :class="message.status">
-              <p>{{message.text}}</p><!-- //Vue: messaggio -->
-              <span>{{message.date}}</span><!-- //Vue: orario di invio del messaggio -->
+              <div>
+                <p>{{message.text}}</p><!-- //Vue: messaggio -->
+                <span class="date">{{message.date}}</span><!-- //Vue: orario di invio del messaggio -->
+              </div>
+              <!-- // M5.1 Cancella messaggio: menu a tendina -->
+              <div class="dropdown d_none">
+                <span class="icon_dropdown"><i class="fas fa-angle-down"></i></span>
+                <ul class="dropdown_menu position_ab list_style_none d_none">
+                  <li>Message info</li>
+                  <li>Delete message</li>
+                </ul><!-- /.dropdown_menu -->
+              </div><!-- /.dropdown -->
+
+
             </div><!-- /.message_chat -->
           </div><!-- /.message_row -->
         </div><!-- /.main_chat -->
