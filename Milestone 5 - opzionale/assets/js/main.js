@@ -8,10 +8,14 @@ let app = new Vue({
     newMessage: '',
     searchContact: '',
     message: 'Ultimo accesso oggi alle',
+    user:{
+      name: 'Nome Utente',
+      avatar: '_io',
+    },
     contacts: [
       {
         name: 'Michele',
-        avatar: './assets/img/avatar_1.jpg',
+        avatar: '_1',
         visible: true,
         messages: [
           {
@@ -34,7 +38,7 @@ let app = new Vue({
 
       {
         name: 'Fabio',
-        avatar: './assets/img/avatar_2.jpg',
+        avatar: '_2',
         visible: true,
         messages: [
           {
@@ -56,7 +60,7 @@ let app = new Vue({
       },
       {
         name: 'Samuele',
-        avatar: './assets/img/avatar_3.jpg',
+        avatar: '_3',
         visible: true,
         messages: [
           {
@@ -78,7 +82,7 @@ let app = new Vue({
       },
       {
         name: 'Franco',
-        avatar: './assets/img/avatar_4.jpg',
+        avatar: '_4',
         visible: true,
         messages: [
           {
@@ -95,7 +99,7 @@ let app = new Vue({
       },
       {
         name: 'Antonio',
-        avatar: './assets/img/avatar_5.jpg',
+        avatar: '_5',
         visible: true,
         messages: [
           {
@@ -112,7 +116,7 @@ let app = new Vue({
       },
       {
         name: 'Luisa',
-        avatar: './assets/img/avatar_6.jpg',
+        avatar: '_6',
         visible: true,
         messages: [
           {
@@ -139,7 +143,7 @@ let app = new Vue({
       },
       {
         name: 'Marco',
-        avatar: './assets/img/avatar_7.jpg',
+        avatar: '_7',
         visible: true,
         messages: [
           {
@@ -161,7 +165,7 @@ let app = new Vue({
       },
       {
         name: 'Andrea',
-        avatar: './assets/img/avatar_8.jpg',
+        avatar: '_8',
         visible: true,
         messages: [
           {

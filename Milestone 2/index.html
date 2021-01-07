@@ -21,8 +21,8 @@
         <!-- .header_left -->
         <div class="header_left">
           <div class="user">
-            <img src="assets/img/avatar_io.jpg" alt="">
-            <h3>Nome Utente</h3>
+            <img :src="'assets/img/avatar' + user.avatar +'.jpg'" :alt="user.avater">
+            <h3>{{user.name}}</h3>
           </div><!-- /.user -->
           <div class="icons">
             <i class="fas fa-circle-notch"></i>
@@ -42,8 +42,10 @@
 
         <!-- .left_searchBar -->
         <div class="left_searchBar">
-          <i class="fas fa-search"></i>
-          <input type="text" name="search" value="" placeholder="Cerca o inizia una nuova chat">
+          <div>
+            <i class="fas fa-search"></i>
+            <input type="text" name="search" value="" placeholder="Cerca o inizia una nuova chat">
+          </div>
         </div><!-- /.left_searchBar -->
 
         <!-- .contacts -->
@@ -51,8 +53,8 @@
           <!-- // M1.1 Visualizzazione dinamica della lista contatti: tramite la direttiva v-for -->
           <!-- // M2.2 Click sul contatto mostra la conversazione del contatto cliccato -->
           <div class="contact" v-for="(contact, index) in contacts" @click="contactIndex(index)">
-            <img :src="contacts[index].avatar" alt=""><!-- //Vue: immagine contatto -->
-            <p>{{contacts[index].name}}</p><!-- //Vue: nome contatto -->
+            <img :src="'assets/img/avatar' + contact.avatar +'.jpg'" alt=""><!-- //Vue: immagine contatto -->
+            <p>{{contact.name}}</p><!-- //Vue: nome contatto -->
           </div><!-- /.contact -->
         </div><!-- /.contacts -->
       </aside>
@@ -62,7 +64,7 @@
         <!-- .header_right -->
         <div class="header_right">
           <div class="contact_chat">
-            <img :src="contacts[counter].avatar" alt=""><!-- //Vue: immagine contatto selezionato -->
+            <img :src="'assets/img/avatar' + contacts[counter].avatar +'.jpg'" alt=""><!-- //Vue: immagine contatto selezionato -->
             <div>
               <h3>{{contacts[counter].name}}</h3><!-- //Vue: nome contatto selezionato -->
               <p>{{message}}</p><!-- //Vue: messaggio di ultimo accesso del contatto -->
